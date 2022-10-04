@@ -1,0 +1,42 @@
+/* root es un index ganerico para cualquier archivo html 
+Sirve para crear una bariable*/
+:root{
+  --background-color:rgb(44, 44, 44);
+  --theme-color:rgb(255, 255, 255);
+  --primary-color:#b374e7;
+  --secundary-color:black;
+  --text-color:rgb(255, 255, 255);
+  --navbar-shallow-color:#d59cfc;
+  --menu-mobile-background-color:#d1b9f8;
+  --padding-container:100px 0;
+  --color-title: #fff;
+  --text-color-inverse:rgb(240, 220, 250);
+  --cor-background: rgb(0, 0, 0);
+  --cor-reflexo: rgba(255, 255, 255, 0.4);
+  --cores-dancantes: rgb(76, 217, 105), rgb(52, 170, 220), rgb(88, 86, 217),rgb(255, 45, 83);
+}
+/* General a Todas las Pestañas*/
+body{
+  /* 3 - Agg el font de google */
+  font-family: 'Poppins', sans-serif; 
+  background-color: var(--background-color);
+  color:var(--text-color);
+  /* le agg un padding top por el NAV*/
+  padding-top: 60px;
+
+}
+/* Navegacion */
+a{
+  /* 4 - Le sacamos el subrallado a los link del nav */
+  text-decoration: none;
+  color: var(--text-color);
+}
+/*    PADDING DE PAGINA */
+.hortizontal-padding{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.vertical-padding{
+  padding-top: 5px;
+  padding-left: 15px;
+}
