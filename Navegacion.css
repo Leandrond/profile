@@ -1,0 +1,166 @@
+.topheader{
+    background-color:var(--primary-color);
+    /*le darmemos sombra al topheader general*/
+    box-shadow: 0 1px 5px var(--navbar-shallow-color);
+    /*Para que este siempre en la misma parte de la pantalla aunque se haga scroll*/
+    position:fixed;
+    /**/
+    top:0;
+    left: 0;
+    /* le damos el ancho de toda la pagina al top-header*/
+    width: 100%;  
+    /*este arriba de todo en la pantalla*/
+    z-index: 100; 
+}
+.topnav{
+    /* Le damos un display flex para que se ordenen en fila*/
+    display: flex;
+    /* y un justify para que semare el contenido de punta a punta*/
+    justify-content: space-between;
+}
+
+/* LOGO DE NAV */
+
+.logo{
+    /* Dentro de logo se encuentra img y mi nombre*/
+    /* Le damos el display flex para que se enfilen*/
+    /* y le damos es align para que se mantengan juntos*/
+    display: flex;
+    align-items: center;
+    /*vamos a darle tamaño y grosor a lo escrito dentro del bloque logo*/
+    font-size: 80%;
+    font-weight: 400;
+}
+.logo img{
+    border-radius: 5%;
+}
+
+/* PRUEBA DE COLORES */
+
+
+.conteudo {
+    background: linear-gradient(to right, var(--cores-dancantes));
+    width: 155px;
+    height: 50px;
+    border-radius: 5px;
+    z-index: 10;
+    animation: colores 2s linear infinite;
+    color: aliceblue;
+    margin-left: 3%;
+}
+
+/* rotacion de colores*/
+@keyframes colores {
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+/* pocicionamiento de Colores*/
+.conteudo .caixa,
+.conteudo span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.conteudo .caixa {
+    background-color: var(--cor-background);
+    width: 142px;
+    height: 43px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+
+/* MENU */
+
+
+.menu{
+    /* le damos un display:flex para que se alinien en fila*/
+    display: flex;
+    /* y ahora le sacamos los putos a la lista*/
+    list-style: none;
+    margin: 0%;
+    padding: 0%;
+}
+.menu li{
+    padding: 0 10px;
+}
+.menu a{
+    color: var(--text-color);
+    font-size: 18px;
+    font-weight: 300;
+    /*lo centramos dentro del nav a 50px*/
+    line-height: 50px;
+    /*lo pasamos a mayusculas*/
+    text-transform: uppercase;
+}
+
+/*  MENU - BOTONES*/
+
+
+/* para que no se vean los botones en la pagina*/
+.open-menu,
+.close-menu{
+    display: none;
+}
+
+/* a menos que su tamaño sea mas chico que dentro de nuestro MEDIA vamos a cambier todo lo que querramos para la pag en responsive menor a 950px */
+    /*MEDIA QUERY*/
+@media  screen and (max-width: 765px){
+
+    /* MENU */
+    .menu {
+        /*cambiamos el orden de los enlaces a vertical*/
+        flex-direction: column;
+        position: fixed;
+        left: 0;
+        top: 0;
+        align-items: center;
+        background-color: var(--menu-mobile-background-color);
+        /* hacemos que el menu en mobile ocupe toda la pantalla*/
+        height: 100%;
+        width: 100%;
+        /* preevenimos que si es muy pequeña la pantalla no podamos ver todo el menu*/
+        overflow: auto;
+        z-index: 1000;
+        /*ocultamos el menu hasta que lo apreten*/
+        opacity: 0;
+        pointer-events: none;
+        /*le agg transicion de opacidad para que no quede un menu tan brusco*/
+        transition: opacity 0s;   
+    }
+    /* MENU - LI*/
+    .menu li{
+        padding: 0px;        
+    }
+    /* MENU - LI - ENLACES*/
+    .menu a{
+        color: var(--text-color);
+        /*lo centramos dentro del nav a 50px*/
+        line-height: 65px;
+    }
+
+    /*  MENU - BOTONES*/
+
+    .open-menu,
+    .close-menu {
+        display: block;
+        border: none;
+        background: none;
+        
+    }
+    .close-menu{
+        /* con esto sacamos el boron de cerrar de su aliniacion centrada y la mandamos a la derecha*/
+        align-self: flex-end;
+        padding: 15px 5px;
+        cursor: pointer;
+    }
+    /* agregamos el estilo que va a usar la funcion de JAVASCRIPT para el menu*/
+    .menu-opened{
+        opacity: 1;
+        pointer-events: all;
+    }
+}
